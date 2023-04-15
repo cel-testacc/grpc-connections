@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service BookDetails {
+  rpc GetBookDetails (BookDetailsRequest) returns (BookDetailsResponse);
+}
+
+message BookDetailsData {
+  string author = 1;
+  string title = 2;
+  string quotes = 3;
+}
+
+message BookDetailsRequest {
+  string author = 1;
+}
+
+message BookDetailsResponse {
+  repeated BookDetailsData bookDetails = 1;
+}
